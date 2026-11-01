@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-accent="navy" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>CourtDesk AI: agents prepare, lawyers decide</title>
+<meta name="description" content="A legal practice platform for UAE law firms, in development. Specialised agents prepare the work; lawyers review, decide and send.">
+<link rel="alternate" hreflang="ar" href="ar/">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script src="assets/appearance.js"></script>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/landing.css">
+</head>
+<body>
+<div id="doc" data-lang="en" dir="ltr">
+<a class="skip" href="#main"><span data-l="en">Skip to content</span></a>
+
+<svg width="0" height="0" aria-hidden="true" class="s1"><defs>
+ <symbol id="mark" viewBox="0 0 48 48"><path d="M38 9H12v30h18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 18v12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".5"/><circle cx="38" cy="39" r="5.6" fill="none" stroke="#FFB23E" stroke-width="3.6"/><circle cx="38" cy="39" r="1.9" fill="#FFB23E"/></symbol>
+ <symbol id="smark" viewBox="0 0 48 48"><path d="M38 9H10v15h28v15H12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<header class="bar dark" id="bar">
+ <div class="wrap">
+  <a class="lock" href="#main" aria-label="CourtDesk AI"><svg class="mk-anim mk-head" width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><path class="m-path" d="M38 9H12v30h18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="m-rule" d="M22 18v12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".5"/><circle class="m-ring" cx="38" cy="39" r="5.6" fill="none" stroke="#FFB23E" stroke-width="3.6"/><circle class="m-dot" cx="38" cy="39" r="1.9" fill="#FFB23E"/></svg><span class="wm" data-l="en">CourtDesk<b>AI</b></span></a>
+  <nav class="nav" aria-label="Sections">
+   <a href="#agents"><span data-l="en">Agents (planned)</span></a>
+   <a href="#journey"><span data-l="en">How work moves</span></a>
+   <a href="#confidential"><span data-l="en">Confidentiality</span></a>
+   <a href="#status"><span data-l="en">Where we are</span></a>
+  </nav>
+  <div class="appear" id="appear">
+   <button class="seg ap-btn" id="appearBtn" type="button" aria-expanded="false" aria-controls="appearPanel"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/></svg><span data-l="en">Appearance</span></button>
+   <div class="ap-panel" id="appearPanel" hidden>
+    <p class="ap-h" id="apThemeH"><span data-l="en">Colour</span></p>
+    <div class="ap-row" role="radiogroup" aria-labelledby="apThemeH">
+     <button type="button" role="radio" data-accent="navy" class="sw-navy"><i></i><span data-l="en">Navy</span></button>
+     <button type="button" role="radio" data-accent="slate" class="sw-slate"><i></i><span data-l="en">Slate</span></button>
+     <button type="button" role="radio" data-accent="steel" class="sw-steel"><i></i><span data-l="en">Steel</span></button>
+     <button type="button" role="radio" data-accent="midnight" class="sw-midnight"><i></i><span data-l="en">Midnight</span></button>
+     <button type="button" role="radio" data-accent="dusk" class="sw-dusk"><i></i><span data-l="en">Dusk</span></button>
+    </div>
+    <p class="ap-h" id="apModeH"><span data-l="en">Mode</span></p>
+    <div class="ap-row ap-modes" role="radiogroup" aria-labelledby="apModeH">
+     <button type="button" role="radio" data-mode="light"><span data-l="en">Light</span></button>
+     <button type="button" role="radio" data-mode="dark"><span data-l="en">Dark</span></button>
+     <button type="button" role="radio" data-mode="system"><span data-l="en">Device</span></button>
+    </div>
+    <button type="button" class="ap-reset" id="apReset"><span data-l="en">Reset to default</span></button>
+    <p class="ap-note"><span data-l="en">Saved in this browser only. No cookies.</span></p>
+   </div>
+  </div>
+  <a class="seg" href="ar/" hreflang="ar" lang="ar" data-l="en">العربية</a>
+  <a class="btn btn-signin" href="login/"><span data-l="en">Sign in</span></a>
+ </div>
+</header>
+
+<main id="main">
+<svg id="thread" aria-hidden="true"><path class="tg" id="threadGhost"/><path class="tp" id="threadPath"/><g id="knots"></g><circle class="glow" id="threadGlow" r="12"/><circle class="head" id="threadHead" r="4.5"/></svg>
+<!-- ================= HERO: THE SCALES ================= -->
+<section class="band hero" id="hero" aria-labelledby="h0">
+ <div class="frame-line" aria-hidden="true"></div>
+ <div class="hero-pin wrap">
+  <div class="hero-grid">
+   <div>
+    <h1 class="d1" id="h0">
+     <span data-l="en"><span class="split">The work, prepared.</span><br><span class="soft l2"><span class="split">The judgment,</span> <span class="sig-wrap"><span class="split">yours.</span><svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path class="sig" d="M2 14 C 40 4, 70 18, 110 9 S 170 6, 198 12" fill="none" stroke="#FFB23E" stroke-width="5" stroke-linecap="round"/></svg></span></span></span>
+     
+    </h1>
+    <p class="lede"><span data-l="en">The legal operating workspace for UAE law firms. Specialised AI agents (planned) prepare your matters, filings and deadlines. Your lawyers weigh them and decide.</span></p>
+    <div class="hero-cta">
+     <a class="btn btn-amber btn-lg" href="login/"><span data-l="en">Sign in</span><span class="arr" aria-hidden="true">→</span></a>
+     <a class="btn btn-ghost btn-lg" href="#journey"><span data-l="en">See how work moves</span></a>
+    </div>
+    <div class="legend" id="legend">
+     <div><i></i><span data-l="en">Facts drafted from the file</span></div>
+     <div><i></i><span data-l="en">Figures checked by code</span></div>
+     <div><i></i><span data-l="en">Deadline from a verified rule</span></div>
+     <div><i></i><span data-l="en">Exhibits attached</span></div>
+     <div class="you"><i></i><span data-l="en">Your judgment: the scales balance</span></div>
+    </div>
+   </div>
+   <svg class="scales" id="scales" viewBox="0 0 640 600" role="img" aria-label="Scales of justice: agents place prepared work on one pan, the lawyer's judgment on the other">
+    <defs><radialGradient id="spot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--emerald-3)" stop-opacity=".9"/><stop offset=".6" stop-color="var(--emerald-3)" stop-opacity=".25"/><stop offset="1" stop-color="var(--emerald-3)" stop-opacity="0"/></radialGradient></defs>
+    <g id="halo" aria-hidden="true">
+     <circle cx="320" cy="320" r="300" fill="url(#spot)" id="spotC"/>
+     <g id="ringA"><circle class="halo-c" cx="320" cy="320" r="262" opacity=".28"/><circle class="ticks" cx="320" cy="320" r="252" stroke-dasharray="1.2 11.98" opacity=".35"/></g>
+     <g id="ringB"><circle class="halo-c" cx="320" cy="320" r="214" opacity=".18" stroke-dasharray="2 6"/><circle class="ticks s3" cx="320" cy="320" r="206" stroke-dasharray="1 31.35" opacity=".5"/></g>
+     <circle class="halo-c" cx="320" cy="320" r="168" opacity=".12"/>
+    </g>
+    <path class="ln draw" d="M230 560 H410"/>
+    <path class="ln draw" d="M262 560 C 280 530, 300 520, 320 520 C 340 520, 360 530, 378 560"/>
+    <path class="ln draw" d="M320 520 V150"/>
+    <path class="br draw" d="M300 520 V172 M340 520 V172" opacity=".45"/>
+    <circle class="ln draw" cx="320" cy="110" r="14"/>
+    <path class="ln draw" d="M320 124 V140"/>
+    <g id="beam"><path class="ln draw" d="M120 150 H520"/><circle class="ln" cx="320" cy="150" r="9" fill="#0B3B33"/><path class="br" d="M150 150 Q 235 128 320 150 Q 405 128 490 150" opacity=".6"/></g>
+    <g id="panL" transform="translate(130 150)">
+     <path class="ln draw" d="M0 0 L-88 190 M0 0 L88 190"/>
+     <path class="bowl" d="M-104 190 Q0 262 104 190 Z"/>
+     <g id="loadL">
+      <g class="chip"><g transform="translate(0 175)"><rect x="-72" y="-14" width="144" height="28" rx="8"/><circle class="dot" cx="-56" cy="0" r="4"/><text x="6" y="4" text-anchor="middle"><tspan data-l="en">Facts</tspan></text></g></g>
+      <g class="chip"><g transform="translate(0 145)"><rect x="-72" y="-14" width="144" height="28" rx="8"/><circle class="dot" cx="-56" cy="0" r="4"/><text x="6" y="4" text-anchor="middle"><tspan data-l="en">Figures</tspan></text></g></g>
+      <g class="chip"><g transform="translate(0 115)"><rect x="-72" y="-14" width="144" height="28" rx="8"/><circle class="dot" cx="-56" cy="0" r="4"/><text x="6" y="4" text-anchor="middle"><tspan data-l="en">Deadline</tspan></text></g></g>
+      <g class="chip"><g transform="translate(0 85)"><rect x="-72" y="-14" width="144" height="28" rx="8"/><circle class="dot" cx="-56" cy="0" r="4"/><text x="6" y="4" text-anchor="middle"><tspan data-l="en">Exhibits</tspan></text></g></g>
+     </g>
+    </g>
+    <g id="panR" transform="translate(510 150)">
+     <path class="ln draw" d="M0 0 L-88 190 M0 0 L88 190"/>
+     <path class="bowl" d="M-104 190 Q0 262 104 190 Z"/>
+     <g class="wt" id="weight"><circle class="o" cx="0" cy="159" r="26"/><circle class="i" cx="0" cy="159" r="10"/><text x="0" y="254" text-anchor="middle"><tspan data-l="en">Your judgment</tspan></text></g>
+    </g>
+   </svg>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span data-l="en">Scroll to weigh the matter</span><span class="l"></span></div>
+ </div>
+</section>
+
+<div class="marquee" aria-label="Practice areas">
+ <div class="mq" aria-hidden="true">
+  <span data-l="en">Commercial</span><span data-l="en">Civil</span><span data-l="en">Labour</span><span data-l="en">Rental</span><span data-l="en">Personal status</span><span data-l="en">Appeals</span><span data-l="en">Execution</span><span data-l="en">Arbitration</span><span data-l="en">Advisory</span>
+  <span data-l="en">Commercial</span><span data-l="en">Civil</span><span data-l="en">Labour</span><span data-l="en">Rental</span><span data-l="en">Personal status</span><span data-l="en">Appeals</span><span data-l="en">Execution</span><span data-l="en">Arbitration</span><span data-l="en">Advisory</span>
+  
+  
+ </div>
+</div>
+
+<section class="statement" aria-label="What CourtDesk does">
+ <div class="wrap">
+  <span class="kick mono"><span data-l="en">Why CourtDesk</span></span>
+  <div class="st-grid"><div>
+  <p class="fill" data-l="en">A law firm runs on matters, deadlines and decisions. CourtDesk will let <em>specialised agents</em> prepare the first two, so your lawyers can give <strong>their full judgment</strong> to the third.</p>
+  
+  </div>
+  <div class="folios" id="folios" aria-hidden="true">
+   <div class="folio"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span><h3><span data-l="en">Matters</span></h3><small><span data-l="en">Filed, matched and kept in one place</span></small></span><span class="ws"><span>IN</span><span>DR</span></span><span class="stamp"><span data-l="en">Prepared</span></span><span class="line"></span></div>
+   <div class="folio"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><span><h3><span data-l="en">Deadlines</span></h3><small><span data-l="en">From verified rules, open to correction</span></small></span><span class="ws"><span>DL</span><span>CO</span></span><span class="stamp"><span data-l="en">Prepared</span></span><span class="line"></span></div>
+   <div class="folio yours"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="4" fill="#FFB23E"/></svg></span><span><h3><span data-l="en">Decisions</span></h3><small><span data-l="en">Always made by a named lawyer</span></small></span><span></span><span class="stamp"><span data-l="en">Yours</span></span><span class="line"></span></div>
+  </div>
+  </div>
+ </div>
+</section>
+
+<section class="agents" id="agents" aria-labelledby="h-ag">
+ <div class="ag-pin">
+  <div class="wrap ag-head">
+   <div><span class="kick mono"><span data-l="en">The agents · planned</span></span><h2 class="d2" id="h-ag"><span data-l="en">A bench of specialists, <span class="it">each with one job.</span></span></h2></div>
+   <p class="lede s4"><span data-l="en">Each agent works only within what the signed-in lawyer may see, and hands its work to a person. None is built yet.</span></p>
+  </div>
+  <div class="ag-track" id="agTrack">
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">IN</span><h3><span data-l="en">Intake</span></h3><p><span data-l="en">Reads incoming email and documents and files them to the right matter.</span></p><div class="sample"><span data-l="en">"Payment reply from the client's finance team, filed to 2214/2026 with 3 attachments."</span></div></article>
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">DR</span><h3><span data-l="en">Drafting</span></h3><p><span data-l="en">Prepares first drafts: statements of claim, memoranda, letters.</span></p><div class="sample"><span data-l="en">"Statement of claim, draft 1: Facts, Requests, Exhibits."</span></div></article>
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">FG</span><h3><span data-l="en">Figures</span></h3><p><span data-l="en">Brings amounts together. Every figure is calculated by code, never by the model.</span></p><div class="sample num"><span data-l="en">"4 invoices · AED 1,250,000 · matches the ledger."</span></div></article>
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">DL</span><h3><span data-l="en">Deadlines</span></h3><p><span data-l="en">Counts dates only from verified, jurisdiction-specific rules, open to correction.</span></p><div class="sample"><span data-l="en">"Filing window found. Marked 'needs verification' until a lawyer confirms."</span></div></article>
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">CO</span><h3><span data-l="en">Court operations</span></h3><p><span data-l="en">Prepares registration and filing tasks for your court officers.</span></p><div class="sample"><span data-l="en">"Registration task ready: brief, fee, two exhibits."</span></div></article>
+   <article class="ag"><span class="st"><span data-l="en">Planned</span></span><span class="disc">EX</span><h3><span data-l="en">Execution</span></h3><p><span data-l="en">Follows execution files: applications, orders, amounts collected.</span></p><div class="sample"><span data-l="en">"Handover returned: certified copy of the judgment missing."</span></div></article>
+   <article class="ag you"><span class="st"><span data-l="en">Always</span></span><span class="disc"><span data-l="en">YOU</span></span><h3><span data-l="en">The lawyer decides</span></h3><p><span data-l="en">Approves, corrects or returns. Nothing reaches a client or a court without a named person.</span></p><div class="sample"><span data-l="en">"Approved for filing · L. Haddad, Partner."</span></div></article>
+   <article class="ag rule"><p><span data-l="en">Agents draft and propose. People approve and send.</span></p></article>
+  </div>
+  <div class="wrap"><div class="ag-progress" aria-hidden="true"><i id="agBar"></i></div></div>
+ </div>
+</section>
+
+<section class="band travel" id="journey" aria-labelledby="h-tr">
+ <div class="frame-line" aria-hidden="true"></div>
+ <div class="tr-pin wrap">
+  <span class="kick mono"><span data-l="en">How work moves</span></span>
+  <h2 class="d2" id="h-tr"><span data-l="en">From the consultant to the court, <span class="it s5">and on to execution.</span></span></h2>
+  <div class="track">
+   <div class="ln"></div><div class="fill" id="trFill"></div>
+   <div class="token" id="token"><div class="tk"><i></i><span data-l="en">Register the claim</span><span class="num s6">2214/2026</span></div></div>
+   <div class="sts">
+    <div class="stn"><b><span data-l="en">Consultant</span></b><span><span data-l="en">writes the brief</span></span></div>
+    <div class="stn"><b><span data-l="en">Court operations</span></b><span><span data-l="en">prepares and files</span></span></div>
+    <div class="stn"><b><span data-l="en">Court</span></b><span><span data-l="en">accepts or asks</span></span></div>
+    <div class="stn"><b><span data-l="en">Execution</span></b><span><span data-l="en">accepts the handover</span></span></div>
+    <div class="stn you"><b><span data-l="en">You</span></b><span><span data-l="en">oversee every step</span></span></div>
+   </div>
+  </div>
+  <div class="tr-notes" id="trNotes">
+   <div><span data-l="en">The consultant writes what the officer needs, and only that.</span></div>
+   <div><span data-l="en">The submission reference is recorded with the filing.</span></div>
+   <div><span data-l="en">The court's answer is recorded separately from "done".</span></div>
+   <div><span data-l="en">Execution accepts, or returns it with a reason.</span></div>
+   <div><span data-l="en">The consultant keeps legal oversight throughout.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="workspace" aria-labelledby="h-ws">
+ <div class="wrap">
+  <span class="kick mono"><span data-l="en">courtdeskai.com/app · design concept</span></span>
+  <h2 class="d2" id="h-ws"><span data-l="en">Your desk, <span class="it">already prepared.</span></span></h2>
+  <p class="lede"><span data-l="en">Sign in at courtdeskai.com/login and land on your work: what needs your decision first, agents' notes in the margin, confidential matters protected. Sign-in is not active yet.</span></p>
+  <div class="glimpse-stage" id="glimpse">
+   <div class="layer l-app" id="lApp" data-depth="0.12">
+    <div class="ap-top"><span class="crumb"><span data-l="en">Workspace</span> / <b><span data-l="en">My work</span></b></span>
+     <span class="ap-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span data-l="en">Search matters, parties, case numbers</span><kbd>Ctrl K</kbd></span>
+     <span class="ap-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge">3</span></span><span class="ap-av">LH</span></div>
+    <div class="ap-body">
+     <nav class="ap-nav" aria-label="Concept navigation"><span class="lg"><svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg>CourtDesk</span>
+      <span class="it2 on"><span data-l="en">My work</span><span class="c">3</span></span>
+      <span class="grp"><span data-l="en">Practice</span></span>
+      <span class="it2"><span data-l="en">Matters</span><span class="c">128</span></span>
+      <span class="it2"><span data-l="en">Hearing roll</span><span class="c">2</span></span>
+      <span class="it2"><span data-l="en">Documents</span></span>
+      <span class="grp"><span data-l="en">Operations</span></span>
+      <span class="it2"><span data-l="en">Court operations</span><span class="c">7</span></span>
+      <span class="it2"><span data-l="en">Execution</span><span class="c">4</span></span>
+      <span class="it2"><span data-l="en">Access requests</span><span class="c">1</span></span>
+      <span class="grp"><span data-l="en">Firm</span></span>
+      <span class="it2"><span data-l="en">People and roles</span></span>
+     </nav>
+     <div class="ap-main">
+      <div class="ap-hello"><h4><span data-l="en">Good morning, Layla</span></h4><p><span data-l="en">Saturday 31 October · 3 decisions waiting · 2 hearings today</span></p></div>
+      <div class="today"><div class="hd"><b><span data-l="en">Today</span></b><span class="num">08:00 – 16:00</span></div>
+       <div class="tl"><span class="tick s7">08:00</span><span class="tick s8">10:00</span><span class="tick s9">12:00</span><span class="tick s10">14:00</span><span class="tick s11">16:00</span>
+        <span class="ev h s12"><span class="num s13">09:30</span> 2214/2026</span>
+        <span class="ev d s14"><span data-l="en">Filing window</span></span>
+        <span class="ev h s15"><span class="num s13">12:30</span> 0912/2026</span>
+        <span class="now s16"></span></div></div>
+      <div class="sec-h"><b><span data-l="en">Needs your decision</span></b><span><span data-l="en">Prepared by agents · sample</span></span></div>
+      <div class="dq">
+       <div class="dr"><span class="cn">2214/2026</span><span><b><span data-l="en">Approve statement of claim</span></b><small><span data-l="en">Sahra Marine Supplies LLC · First Instance</span></small></span><span class="by"><span>DR</span><span>FG</span><span>DL</span></span><span class="chip wait"><span data-l="en">Your decision</span></span></div>
+       <div class="dr"><span class="cn">0187/2025</span><span><b><span data-l="en">Resend execution handover</span></b><small><span data-l="en">Certified judgment copy now attached</span></small></span><span class="by"><span>EX</span><span>IN</span></span><span class="chip ok"><span data-l="en">Prepared</span></span></div>
+       <div class="dr"><span class="cn">3390/2026</span><span><b><span data-l="en">Exceptional access request</span></b><small><span data-l="en">24 hours, read-only · absence cover</span></small></span><span class="by"><span>··</span></span><span class="chip conf"><svg width="12" height="12" aria-hidden="true"><use href="#lock"/></svg><span data-l="en">Confidential</span></span></div>
+      </div>
+      <div class="pipe">
+       <div><small><span data-l="en">Requested</span></small><b class="num">2</b><i class="s17"></i></div>
+       <div><small><span data-l="en">In preparation</span></small><b class="num">3</b><i class="s18"></i></div>
+       <div><small><span data-l="en">Submitted</span></small><b class="num">1</b><i class="s19"></i></div>
+       <div><small><span data-l="en">Awaiting court</span></small><b class="num">4</b><i class="s20"></i></div>
+      </div>
+     </div>
+     <aside class="ap-margin" aria-label="Agent notes"><span class="t"><span data-l="en">The margin</span></span>
+      <div class="mn"><span class="dsc">FG</span><span><span data-l="en">Total of AED 1,250,000 matches 4 invoices.</span><small><span data-l="en">Checked by code · planned agent</span></small></span></div>
+      <div class="mn"><span class="dsc">DL</span><span><span data-l="en">Filing window found. Please confirm the date.</span><small><span data-l="en">Needs verification</span></small></span></div>
+      <div class="mn"><span class="dsc">CO</span><span><span data-l="en">Registration task ready for Omar Nasser.</span><small><span data-l="en">Court operations</span></small></span></div>
+      <div class="mn you"><span class="dsc"><span data-l="en">YOU</span></span><span><span data-l="en">3 decisions waiting for you.</span><small><span data-l="en">Nothing is sent without you</span></small></span></div>
+     </aside>
+    </div>
+   </div>
+   <div class="layer l-toast" id="lToast" data-depth="0.4"><span class="dsc">CO</span><span><b><span data-l="en">Registration task prepared</span></b><small><span data-l="en">2214/2026 · just now · planned agent</span></small></span></div>
+   <div class="layer l-dec" id="lDec" data-depth="0.7"><span class="ring" aria-hidden="true"></span><span><b><span data-l="en">Approve for filing?</span></b><small><span data-l="en">Statement of claim · 2214/2026</span></small></span><span class="go"><span data-l="en">Review</span></span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec s21" id="confidential" aria-labelledby="h-cf">
+ <div class="wrap conf-grid">
+  <div>
+   <span class="kick mono"><span data-l="en">Confidential matters</span></span>
+   <h2 class="d2" id="h-cf"><span data-l="en">Each person sees <span class="it">only what their role allows.</span></span></h2>
+   <p class="lede"><span data-l="en">Choose who is looking at the same confidential case. Exceptional access is requested, approved by the responsible consultant or two custodians, time-limited, read-only and logged. This describes the design; it is not a certified guarantee.</span></p>
+   <div class="who" role="group" aria-label="Who is looking">
+    <button type="button" data-who="team" aria-pressed="true"><span data-l="en">Case team</span></button>
+    <button type="button" data-who="clerk" aria-pressed="false"><span data-l="en">Court officer</span></button>
+    <button type="button" data-who="partner" aria-pressed="false"><span data-l="en">Managing partner</span></button>
+   </div>
+  </div>
+  <div>
+   <div class="case" id="case">
+    <div class="hd"><b class="num s13">3390/2026</b><span class="chip conf"><svg width="12" height="12" aria-hidden="true"><use href="#lock"/></svg><span data-l="en">Confidential</span></span></div>
+    <div class="rw" data-vis="team"><span class="k"><span data-l="en">Client</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">Noura Khalid Trading Est.</span></span></span></div>
+    <div class="rw" data-vis="team"><span class="k"><span data-l="en">Subject</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">Dispute between shareholders</span></span></span></div>
+    <div class="rw" data-vis="team clerk"><span class="k"><span data-l="en">Task</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">File the statement of claim</span></span></span></div>
+    <div class="rw" data-vis="team clerk"><span class="k"><span data-l="en">Brief</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">Two exhibits; fee from the deposit</span></span></span></div>
+    <div class="rw" data-vis="team clerk partner"><span class="k"><span data-l="en">Responsible</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">Abdulrahman bin Sultan Al-Hashimi</span></span></span></div>
+    <div class="rw" data-vis="team clerk partner"><span class="k"><span data-l="en">Status</span></span><span class="v"><span class="red"></span><span class="tx"><span data-l="en">In preparation</span></span></span></div>
+   </div>
+   <p class="view-cap" id="viewCap"></p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" aria-labelledby="h-rl">
+ <div class="wrap">
+  <span class="kick mono"><span data-l="en">The day's roll · sample</span></span>
+  <h2 class="d2" id="h-rl"><span data-l="en">Every hearing, every court, <span class="it">on one roll.</span></span></h2>
+  <div class="roll" id="roll" role="table" aria-label="Sample hearing roll">
+   <div class="rh" role="row"><span role="columnheader"><span data-l="en">Case</span></span><span role="columnheader"><span data-l="en">Time</span></span><span role="columnheader"><span data-l="en">Parties</span></span><span role="columnheader"><span data-l="en">Court</span></span><span role="columnheader"><span data-l="en">Status</span></span></div>
+   <div class="rr" role="row"><span class="cn" role="cell">2214/2026</span><span class="tm" role="cell">09:30</span><span class="party" role="cell"><span data-l="en">Sahra Marine Supplies v. Al Waha Ship Services</span></span><span role="cell"><span data-l="en">First Instance · Commercial</span></span><span class="chip ok" role="cell"><span data-l="en">Brief ready</span></span></div>
+   <div class="rr" role="row"><span class="cn" role="cell">0187/2025</span><span class="tm" role="cell">10:15</span><span class="party" role="cell"><span data-l="en">Noura Khalid Trading v. Rimal Logistics</span></span><span role="cell"><span data-l="en">Appeal · Civil</span></span><span class="chip wait" role="cell"><span data-l="en">Needs your decision</span></span></div>
+   <div class="rr c" role="row"><span class="cn" role="cell">3390/2026</span><span class="tm" role="cell">11:00</span><span class="party" role="cell"><span data-l="en">Withheld</span></span><span role="cell"><span data-l="en">First Instance · Civil</span></span><span class="chip conf" role="cell"><svg width="12" height="12" aria-hidden="true"><use href="#lock"/></svg><span data-l="en">Confidential</span></span></div>
+   <div class="rr" role="row"><span class="cn" role="cell">0912/2026</span><span class="tm" role="cell">12:30</span><span class="party" role="cell"><span data-l="en">Abdulrahman bin Sultan Al-Hashimi v. Bayt Realty</span></span><span role="cell"><span data-l="en">Execution</span></span><span class="chip ok" role="cell"><span data-l="en">Officer assigned</span></span></div>
+  </div>
+  <p class="lede s22"><span data-l="en">Invented parties. Hearings and the roll are planned, not built.</span></p>
+ </div>
+</section>
+
+<section class="band sec" id="decide" aria-labelledby="h-dc">
+ <div class="frame-line" aria-hidden="true"></div>
+ <div class="wrap dec-grid">
+  <div>
+   <span class="kick mono"><span data-l="en">The decision</span></span>
+   <h2 class="d2" id="h-dc"><span data-l="en">Prepared by agents. <span class="it s5">Decided by counsel.</span></span></h2>
+   <div class="aplist">
+    <div><b><span data-l="en">Nothing is sent automatically.</span></b><span data-l="en">Every filing and every letter waits for a named person.</span></div>
+    <div><b><span data-l="en">Every decision is recorded.</span></b><span data-l="en">Who approved, when, and what they saw.</span></div>
+    <div><b><span data-l="en">Figures from code.</span></b><span data-l="en">Deadlines from verified rules.</span></div>
+   </div>
+  </div>
+  <div class="gavel-stage" id="gavelStage" role="button" tabindex="0" aria-label="Replay the gavel"><span class="gavel-hint"><span data-l="en">Click to strike again</span></span>
+   <svg class="gavel" viewBox="0 0 300 300" aria-hidden="true">
+    <defs>
+     <linearGradient id="gWood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--emerald-3)"/><stop offset=".45" stop-color="var(--emerald-2)"/><stop offset="1" stop-color="var(--emerald)"/></linearGradient>
+     <linearGradient id="gHandle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--emerald-3)"/><stop offset="1" stop-color="var(--emerald)"/></linearGradient>
+     <linearGradient id="gBrass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E2C489"/><stop offset=".5" stop-color="#C9A45C"/><stop offset="1" stop-color="#9C7B3C"/></linearGradient>
+    </defs>
+    <!-- sound block: a brass-rimmed disc -->
+    <g id="gBlock">
+    <path d="M26 252 V265 A78 13 0 0 0 182 265 V252" fill="url(#gHandle)"/>
+    <path d="M26 265 A78 13 0 0 0 182 265" class="brasss"/>
+    <ellipse cx="104" cy="252" rx="78" ry="13" fill="url(#gWood)"/>
+    <ellipse cx="104" cy="252" rx="78" ry="13" class="brasss"/>
+    <ellipse cx="104" cy="252" rx="56" ry="8.5" class="edge" opacity=".5"/>
+    </g>
+    <!-- the gavel: pivots at the end of its handle -->
+    <g id="gavelG">
+     <path d="M136 174.5 L256 172 Q268 178 256 184 L136 181.5 Z" fill="url(#gHandle)"/>
+     <path d="M140 175.5 L252 173.6" class="edge" opacity=".6"/>
+     <circle cx="262" cy="178" r="6.5" fill="url(#gBrass)"/>
+     <rect x="127" y="171" width="11" height="14" rx="2.5" fill="url(#gBrass)"/>
+     <rect x="84" y="128" width="40" height="100" rx="9" fill="url(#gWood)"/>
+     <rect x="92" y="134" width="6" height="88" rx="3" class="hl"/>
+     <rect x="80" y="121" width="48" height="12" rx="4" fill="url(#gBrass)"/>
+     <rect x="80" y="223" width="48" height="12" rx="4" fill="url(#gBrass)"/>
+     <path d="M84 150 H124 M84 206 H124" stroke="url(#gBrass)" stroke-width="2.5"/>
+     <rect x="84" y="128" width="40" height="100" rx="9" class="edge"/>
+    </g>
+   </svg>
+   <span class="ripple" id="ripple"></span><span class="ripple" id="ripple2"></span>
+   <div class="approval"><span class="ring" id="apRing" aria-hidden="true"></span><span><b><span data-l="en">Statement of claim · 2214/2026</span></b><small id="apSub"><span data-l="en">Awaiting your decision</span></small></span><span class="chip wait" id="apChip"><span data-l="en">Sample</span></span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec s23" id="status" aria-labelledby="h-st">
+ <div class="wrap st-pin">
+  <span class="kick mono"><span data-l="en">Where we are, honestly</span></span>
+  <h2 class="d2" id="h-st"><span data-l="en">Built, designed, <span class="it">and planned.</span></span></h2>
+  <div class="status3"><span class="s-prog" id="sProg"></span>
+   <div><h3><i class="s24"></i><span data-l="en">Built and tested</span></h3><ul><li><span data-l="en">Each firm's data kept separate</span></li><li><span data-l="en">Roles, departments and case teams</span></li><li><span data-l="en">Confidential matters and exceptional access</span></li><li><span data-l="en">Court registration and execution handover flows</span></li><li><span data-l="en">Not yet deployed</span></li></ul></div>
+   <div><h3><i class="s25"></i><span data-l="en">In design</span></h3><ul><li><span data-l="en">This identity and landing page</span></li><li><span data-l="en">The workspace screens</span></li><li><span data-l="en">Sign-in</span></li></ul></div>
+   <div><h3><i class="s26"></i><span data-l="en">Planned</span></h3><ul><li><span data-l="en">Specialised AI agents</span></li><li><span data-l="en">Hearings, deadlines and the roll</span></li><li><span data-l="en">Documents, finance and email</span></li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="band closing" id="closing" aria-labelledby="h-cl">
+ <canvas id="orbit" aria-hidden="true"></canvas>
+ <div class="frame-line" aria-hidden="true"></div>
+ <div class="wrap">
+  <svg class="mk-anim mk-big" width="84" height="84" viewBox="0 0 48 48" aria-hidden="true"><path class="m-path" d="M38 9H12v30h18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path class="m-rule" d="M22 18v12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".5"/><circle class="m-ring" cx="38" cy="39" r="5.6" fill="none" stroke="#FFB23E" stroke-width="3.6"/><circle class="m-dot" cx="38" cy="39" r="1.9" fill="#FFB23E"/></svg>
+  <h2 class="d1" id="h-cl"><span data-l="en">Bring your judgment. <span class="s5">We'll prepare the rest.</span></span></h2>
+  <div class="hero-cta"><a class="btn btn-amber btn-lg" href="login/"><span data-l="en">Sign in</span><span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" href="#journey"><span data-l="en">See how work moves</span></a></div>
+ </div>
+</section>
+
+</main>
+<footer><div class="wrap"><span data-l="en">CourtDesk AI · a legal practice platform in development · every name and figure on this page is invented · no cookies, no tracking.</span></div></footer>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/landing.js"></script>
+<script src="assets/appearance-ui.js"></script>
+</body>
+</html>

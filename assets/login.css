@@ -1,0 +1,21 @@
+/* Sign-in placeholder. Honest: no form, no fields, nothing collected. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--cd-accent);color:var(--cd-on-accent);font:16px/1.6 "Geist","Helvetica Neue",system-ui,sans-serif;min-height:100vh;min-height:100svh}
+#doc[data-lang="ar"]{font-family:"IBM Plex Sans Arabic","Geist",system-ui,sans-serif}
+.lg-page{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr;background:radial-gradient(1200px 600px at 80% -10%,var(--cd-accent-3),transparent 60%),var(--cd-accent)}
+.lg-bar{display:flex;align-items:center;gap:12px;padding:18px max(16px,env(safe-area-inset-left,0px));max-width:1220px;width:100%;margin:0 auto}
+.lg-lock{display:inline-flex;align-items:center;gap:10px;color:var(--cd-on-accent);text-decoration:none;font-weight:600;font-size:17px;margin-inline-end:auto}
+.lg-lock b{color:var(--cd-brass);font-weight:600}
+.lg-seg{color:var(--cd-on-accent);border:1px solid rgb(247 244 236 / .3);border-radius:999px;padding:8px 14px;text-decoration:none;font-size:13px;min-height:40px;display:inline-flex;align-items:center}
+.lg-main{display:grid;place-items:center;padding:24px 16px 64px}
+.lg-card{width:100%;max-width:520px;background:var(--cd-card);color:var(--cd-ink);border-radius:20px;padding:36px 32px;border-top:3px solid var(--cd-brass);box-shadow:0 40px 90px -40px rgb(5 10 20 / .7)}
+.lg-kicker{margin:0 0 10px;color:var(--cd-muted);font:500 12px "Geist Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+#doc[data-lang="ar"] .lg-kicker{font-family:inherit;letter-spacing:0;text-transform:none;font-size:13px}
+.lg-card h1{font:500 34px/1.15 "Source Serif 4",Georgia,serif;margin:0 0 14px}
+#doc[data-lang="ar"] .lg-card h1{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-weight:600;font-size:30px;line-height:1.35}
+.lg-card p{margin:0 0 16px;color:var(--cd-ink)}
+.lg-status{display:flex;align-items:center;gap:10px;color:var(--cd-muted)!important;font-size:14px}
+.lg-status i{width:9px;height:9px;border-radius:50%;border:1px solid var(--cd-muted)}
+.lg-back{display:inline-flex;align-items:center;min-height:44px;color:var(--cd-accent-ink);font-weight:600;text-underline-offset:.22em}
+:focus-visible{outline:3px solid var(--cd-decide);outline-offset:3px;border-radius:6px}
+@media (max-width:560px){.lg-card{padding:28px 22px}.lg-card h1{font-size:28px}}
